@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</head>
+<script type="text/javascript">
+    Vue.component('option-component', {
+        template: '<option>hello</option>'
+    })
+</script>
+<script type="text/x-template" id="selectTemplate">
+    <select>
+        <option-component> </option-component>
+        <option-component> </option-component>
+    </select>
+</script>
+<script type="text/javascript">
+    Vue.component('select-component', {
+        template: '#selectTemplate'
+    })
+</script>
+
+<body>
+    <div id="app">
+        <select-component></select-component>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.devtools = true;
+    var v = new Vue({
+        el: '#app'
+    })
+</script>
+
+</html>
