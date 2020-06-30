@@ -16,7 +16,6 @@
                 <p>김수한무 거북이와 두루미 ...(생략)</p>
                 <p>김수한무 거북이와 두루미 ...(생략)</p>
             </div>
-
             <p slot="footer">Footer text</p>
         </layout>
     </div>
