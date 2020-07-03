@@ -2,9 +2,16 @@
     <div>
         <h1>연락처</h1>
         <div class = "wrapper">
-            <div class="box" v-for="c in contacts" :key = "c.no">
-                <router-link v-bind:to= "'/contacts/' + c.no">{{c.name}} </router-link> 
+            <div class="box"  v-for="c in contacts" :key = "c.no">
+                <router-link v-bind:to="{name: 'contactbyno', params: {no: c.no}}">
+                    {{c.name}}
+                </router-link>
             </div>
+        </div>
+        <div>
+            <span class= "addButton" @click = "addContact" style = 'cursor:pointer'>
+            연락처 추가
+            </span> 
         </div>
         <router-view></router-view>
     </div>
@@ -18,6 +25,14 @@ export default {
         return {
             contacts : contactlist.contacts
         }
+    },
+    methods : {
+        addContact() {
+            this.$router.push({name: 'contactadd', params : {contactadd : ''}});
+        }
+    },
+    watch : {
+
     }
 }
 </script>
@@ -29,4 +44,15 @@ export default {
     width:100px; font-weight:bold; }
 a:link, a:visited { text-align:center; text-decoration:none;
     display:inline-block; }
+.addButton {
+    float: left;
+    border-radius: 5px;
+    margin: 3px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 100px;
+    background-color: blueviolet;
+    padding: 10px;;
+}
 </style>

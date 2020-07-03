@@ -5,13 +5,13 @@
     <nav>
       <ul>
         <li>
-          <router-link to="/home">Home</router-link>
+          <router-link v-bind:to="{name: 'home'}">Home</router-link>
         </li>
         <li>
-          <router-link to="/about">About</router-link>
+          <router-link v-bind:to="{name: 'about'}">About</router-link>
         </li>
         <li>
-          <router-link to="/contacts">Contacts</router-link>
+          <router-link v-bind:to="{name: 'contacts'}">Contacts</router-link>
         </li>
       </ul>
     </nav>
@@ -27,15 +27,20 @@ import Home from './components/Home.vue';
 import About from './components/About.vue';
 import Contacts from './components/Contacts.vue';
 import ContactByNo from './components/ContactByNo.vue';
+import ContactAdd from './components/ContactAdd.vue';
 import VueRouter from 'vue-router';
 const router = new VueRouter({
   routes : [
     { path:'/', component: Home },
-    { path:'/home', component: Home },
-    { path:'/about', component: About },
-    { path:'/contacts', component: Contacts,
+    { path:'/home', name: 'home', component: Home },
+    { path:'/about', name: 'about', component: About },
+    { path:'/contacts', name: 'contacts',component: Contacts,
       children: [
-      { path: ':no', component: ContactByNo},
+      { path: ':no', name: 'contactbyno', component: ContactByNo
+      },
+      {
+        path: ':contactadd', name: 'contactadd', component: ContactAdd
+      }
       ]
     }
   ]

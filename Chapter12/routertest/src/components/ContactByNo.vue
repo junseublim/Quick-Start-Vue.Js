@@ -61,5 +61,5 @@ export default {
 
 <style>
 table.detail { width:400px; }
-.divider { height: 3px; margin-left: auto; margin-right: auto; background-color: #FF0066; border : 0 none;}
+.divider { height: 3px; margin-top: 5px; margin-left: auto; margin-right: auto; background-color: #FF0066; border : 0 none; clear: both}
 </style>    

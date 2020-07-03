@@ -10,7 +10,8 @@ var contactlist = {
         { no: 1008, name: '김시민', tel: '010-1212-3331', address: '경주' },
         { no: 1009, name: '정약용', tel: '010-1212-3331', address: '경주' },
 
-    ]
+    ],
+    contactNum: 9
 }
 
 export default contactlist;
